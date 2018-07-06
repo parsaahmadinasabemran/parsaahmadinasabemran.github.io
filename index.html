@@ -24,10 +24,25 @@ function MM_preloadImages() { //v3.0
     var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
     if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
 }
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
 </script>
 </head>
 
-<body background="SUPER-BOWL-eagles.jpg" text="#000000" link="#00DFFF" vlink="#470000" alink="#FF0019">
+<body background="SUPER-BOWL-eagles.jpg" text="#000000" link="#00DFFF" vlink="#470000" alink="#FF0019" onLoad="MM_preloadImages('Rollover Navigation/home 2.gif','Rollover Navigation/aboutme 2.gif','Rollover Navigation/usairlines 2.gif','Rollover Navigation/animals 2.gif','Rollover Navigation/logos 2.gif','Rollover Navigation/games 2.gif','Rollover Navigation/bodysystems 2.gif','Rollover Navigation/usstates 2.gif','Rollover Navigation/imagegallery 2.gif','Rollover Navigation/philadelphiaeagles 2.gif','Rollover Navigation/cityofphiladelphia 2.gif','Rollover Navigation/form 2.gif','Rollover Navigation/imagemap 2.gif','Rollover Navigation/bikes 2.gif','Rollover Navigation/climatechange 2.gif','Rollover Navigation/globalwarming 2.gif','Rollover Navigation/earth 2.gif','Rollover Navigation/universe 2.gif')">
 	<div align="center">
 	  <table width="75%" border="0" cellspacing="0" cellpadding="0">
 	    <td height="18" bgcolor="#00971D"><tbody>
@@ -235,12 +250,12 @@ window.onload=WorldClock
             </table></td>
           </tr>
 	      <tr>
-	        <td align="center" bgcolor="#00971D">Rollover Navigation</td>
+	        <td align="center" bgcolor="#00971D"><a href="index.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Home','','Rollover Navigation/home 2.gif',1)"><img src="Rollover Navigation/home 1.gif" alt="" width="100" height="34" id="Home"></a><a href="aboutme.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('About Me','','Rollover Navigation/aboutme 2.gif',1)"><img src="Rollover Navigation/aboutme 1.gif" alt="" width="100" height="32" id="About Me"></a><a href="usairlines.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('US Airlines','','Rollover Navigation/usairlines 2.gif',1)"><img src="Rollover Navigation/usairlines 1.gif" alt="" width="100" height="34" id="US Airlines"></a><a href="animals.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Animals','','Rollover Navigation/animals 2.gif',1)"><img src="Rollover Navigation/animals 1.gif" alt="" width="100" height="32" id="Animals"></a><a href="logos.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Logos','','Rollover Navigation/logos 2.gif',1)"><img src="Rollover Navigation/logos 1.gif" alt="" width="100" height="33" id="Logos"></a><a href="games.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Games','','Rollover Navigation/games 2.gif',1)"><img src="Rollover Navigation/games 1.gif" alt="" width="100" height="34" id="Games"></a><a href="bodysystems.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Body Systems','','Rollover Navigation/bodysystems 2.gif',1)"><img src="Rollover Navigation/bodysystems 1.gif" alt="" width="100" height="30" id="Body Systems"></a><a href="usstates.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('US States','','Rollover Navigation/usstates 2.gif',1)"><img src="Rollover Navigation/usstates 1.gif" alt="" width="100" height="32" id="US States"></a><a href="imagegallery.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image Gallery','','Rollover Navigation/imagegallery 2.gif',1)"><img src="Rollover Navigation/imagegallery 1.gif" alt="" width="100" height="30" id="Image Gallery"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Philadelphia Eagles','','Rollover Navigation/philadelphiaeagles 2.gif',1)"><img src="Rollover Navigation/philadelphiaeagles 1.gif" alt="" width="100" height="32" id="Philadelphia Eagles"></a><a href="cityofphiladelphia.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('City of Philadelphia','','Rollover Navigation/cityofphiladelphia 2.gif',1)"><img src="Rollover Navigation/cityofphiladelphia 1.gif" alt="" width="100" height="33" id="City of Philadelphia"></a><a href="form.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Form','','Rollover Navigation/form 2.gif',1)"><img src="Rollover Navigation/form 1.gif" alt="" width="100" height="32" id="Form"></a><a href="imagemap.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image Map','','Rollover Navigation/imagemap 2.gif',1)"><img src="Rollover Navigation/imagemap 1.gif" alt="" width="100" height="32" id="Image Map"></a><a href="bikes.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Bikes','','Rollover Navigation/bikes 2.gif',1)"><img src="Rollover Navigation/bikes 1.gif" alt="" width="100" height="33" id="Bikes"></a><a href="climatechange.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Climate Change','','Rollover Navigation/climatechange 2.gif',1)"><img src="Rollover Navigation/climatechange 1.gif" alt="" width="100" height="34" id="Climate Change"></a><a href="globalwarming.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Global Warming','','Rollover Navigation/globalwarming 2.gif',1)"><img src="Rollover Navigation/globalwarming 1.gif" alt="" width="100" height="31" id="Global Warming"></a><a href="earth.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Earth','','Rollover Navigation/earth 2.gif',1)"><img src="Rollover Navigation/earth 1.gif" alt="" width="100" height="32" id="Earth"></a><a href="universe.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Universe','','Rollover Navigation/universe 2.gif',1)"><img src="Rollover Navigation/universe 1.gif" alt="" width="100" height="31" id="Universe"></a></td>
           </tr>
 	      <tr>
 	        <td height="518" valign="top" bgcolor="#00971D"><p>Name: Parsa Ahmadi Nasab Emran</p>
 	          <p>Section: CIS 0835-021</p>
-            <p>Age: 19</p>
+            <p>Age: 20</p>
             <p>Birthdate: April 23, 1998</p>
             <p>College/University: Temple University; Sophomore; Class of 2020</p>
             <p>Major: Computer Science</p>

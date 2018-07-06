@@ -1,1 +1,0 @@
-# parsaahmadinasabemran.github.io
